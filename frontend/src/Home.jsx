@@ -63,7 +63,11 @@ export default function Home() {
                         <>
                             <img src={congo} alt="Success" className="sm:h-32 h-24 mx-auto mt-24 mb-8" />
                             <div className='flex items-center gap-2' >
-                                <p className='mx-auto sm:text-3xl text-2xl text-green-600'>You're on the {source} List </p>
+                                {source === "whitelist" ?
+                                    <p className='mx-auto sm:text-3xl text-2xl text-green-600'>Your wallet is Whitelisted </p>
+                                    :
+                                    <p className='mx-auto sm:text-3xl text-2xl text-green-600'>You're on the OG list </p>
+                                }
                                 <GrStatusGood className='sm:text-2xl text-2xl text-green-500 rounded-full' />
                             </div>
                         </>
