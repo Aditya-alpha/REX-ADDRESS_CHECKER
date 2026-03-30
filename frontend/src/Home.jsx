@@ -20,7 +20,7 @@ export default function Home() {
             return
         }
         try {
-            const res = await fetch("http://localhost:8080/check-address", {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/check-address`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ address }),

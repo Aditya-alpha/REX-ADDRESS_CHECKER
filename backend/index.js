@@ -5,11 +5,12 @@ const OG = require('./models/og')
 const cors = require('cors')
 
 const PORT = process.env.PORT || 5000
+const origin = process.env.ORIGIN
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: origin,
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true
 }))
