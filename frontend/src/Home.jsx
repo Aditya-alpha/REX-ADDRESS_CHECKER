@@ -15,7 +15,7 @@ export default function Home() {
     const [loading, setLoading] = useState(false)
     const [isTrue, setIsTrue] = useState(null)
 
-    const targetDate = new Date("April 24, 2026 21:30:00 GMT+0530").getTime()
+    const targetDate = new Date("April 26, 2026 21:30:00 GMT+0530").getTime()
 
     const calculateTimeLeft = () => {
         const now = new Date().getTime()
