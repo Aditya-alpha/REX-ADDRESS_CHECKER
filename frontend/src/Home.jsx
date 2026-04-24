@@ -11,7 +11,6 @@ import { GrStatusGood } from "react-icons/gr";
 export default function Home() {
 
     const [address, setAddress] = useState("")
-    const [source, setSource] = useState(null)
     const [loading, setLoading] = useState(false)
     const [isTrue, setIsTrue] = useState(null)
 
@@ -56,7 +55,6 @@ export default function Home() {
 
             const data = await res.json()
             setIsTrue(data.result)
-            setSource(data.source)
         } catch (err) {
             alert("Server error")
         } finally {
@@ -153,11 +151,7 @@ export default function Home() {
 
                             {isTrue === true && (
                                 <div className='flex items-center gap-2'>
-                                    {source === "whitelist" ?
-                                        <p className='mx-auto sm:text-3xl text-2xl text-green-600'>Your wallet is Whitelisted</p>
-                                        :
-                                        <p className='mx-auto sm:text-3xl text-2xl text-green-600'>You're on the OG list</p>
-                                    }
+                                    <p className='mx-auto sm:text-3xl text-2xl text-green-600'>Your wallet is Whitelisted</p>
                                     <GrStatusGood className='sm:text-2xl text-2xl text-green-500 rounded-full' />
                                 </div>
                             )}
